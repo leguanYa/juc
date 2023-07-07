@@ -9,7 +9,7 @@ package com.leguan;
 public class Test {
 
     private boolean flag = true;
-    private Integer count = 0;
+    private int count = 0;
 
     public void refresh() {
         flag = false;
