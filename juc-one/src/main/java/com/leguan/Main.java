@@ -1,24 +1,39 @@
 package com.leguan;
 
+import java.util.HashMap;
+
 /**
  * @Description：
  * @Author：ZhangHui
- * @Package：
- * @Date: 2023/7/10
- */// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+ * @Package：com.leguan
+ * @Date: 2023/7/7
+ */
 public class Main {
-    public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+    private boolean flag = true;
+    private Integer count = 0;
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
+    public void refresh() {
+        flag = false;
+        System.out.println(Thread.currentThread().getName() + "变更flag属性" + flag);
+    }
+
+    public void load() {
+        System.out.println(Thread.currentThread().getName() + "开始执行循环累加");
+        while (flag) {
+            count++;
         }
+        System.out.println(Thread.currentThread().getName() + "开始执行循环累加结束count=" + count);
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+//        Main test = new Main();
+//        new Thread(test::load, "线程A").start();
+//        Thread.sleep(1000);
+//        new Thread(test::refresh, "线程B").start();
+
+        HashMap<Object, Object> objectObjectHashMap = new HashMap<>();
+        objectObjectHashMap.put(1,1);
+        objectObjectHashMap.put(1,2);
     }
 }
