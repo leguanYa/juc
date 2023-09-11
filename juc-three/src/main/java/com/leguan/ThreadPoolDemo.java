@@ -15,11 +15,13 @@ public class ThreadPoolDemo {
         ExecutorService executorService = Executors.newCachedThreadPool();
         ExecutorService executorService1 = Executors.newFixedThreadPool(10);
         ExecutorService executorService2 = Executors.newSingleThreadExecutor();
+        Executors.newScheduledThreadPool(1);
 
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 20, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(10));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 20, 0L, TimeUnit.MILLISECONDS, new SynchronousQueue<Runnable>());
         for (int i = 0; i < 100; i++) {
             threadPoolExecutor.submit(new MyTask(i));
         }
+
     }
 }
 
