@@ -21,6 +21,8 @@ public class ScheduledThreadPoolExecutorDemo {
 //        executor.scheduleWithFixedDelay(task, 0, 2, TimeUnit.SECONDS);// 任务+延迟
         executor.scheduleAtFixedRate(task, 0, 4, TimeUnit.SECONDS);//任延迟取最大值，稳定定时
 //        定时处理器处理的时候需要注意抛异常的问题，如果异常自己没有捕获到，那么就不会继续执行了
+
+//        0x00000000 0 0000 0 01
     }
 }
 
